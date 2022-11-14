@@ -1,5 +1,4 @@
-import users from "./constants/users.js";
-import vehicles from "./constants/vehicles.js";
+import users from "../constants/users.js";
 
 const formLogin = document.getElementById('form-login');
 const emailLogin = document.getElementById('email-login');
@@ -14,14 +13,12 @@ formLogin?.addEventListener('submit', (e) => {
 	const email = emailLogin.value;
 	const password = passwordLogin.value;
 
-	const isAuth = users.some(user => {
+	const isAuth = users.find(user => {
 		return user.email === email && user.password === password;
 	});
 
+
 	if (isAuth) {
-		console.log(true);
-		window.location.href = '/home.html';
+		window.location.href = 'views/dashboard.html';
 	}
 });
-
-console.log(vehicles);
