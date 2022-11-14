@@ -1,11 +1,14 @@
-import { users } from './constants.js';
+import users from "./constants/users.js";
+import vehicles from "./constants/vehicles.js";
 
 const formLogin = document.getElementById('form-login');
 const emailLogin = document.getElementById('email-login');
 const passwordLogin = document.getElementById('password-login');
 
 
-formLogin.addEventListener('submit', (e) => {
+// ------------------ LOGIN ------------------ //
+
+formLogin?.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const email = emailLogin.value;
@@ -20,3 +23,5 @@ formLogin.addEventListener('submit', (e) => {
 		window.location.href = '/home.html';
 	}
 });
+
+console.log(vehicles);

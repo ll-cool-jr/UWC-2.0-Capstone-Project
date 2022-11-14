@@ -17,5 +17,7 @@
   "bugs": {
     "url": "https://github.com/ll-cool-jr/UWC-2.0-Tensor-Overflow/issues"
   },
-  "homepage": "https://github.com/ll-cool-jr/UWC-2.0-Tensor-Overflow#readme"
+  "homepage": "https://github.com/ll-cool-jr/UWC-2.0-Tensor-Overflow#readme",
+  "dependencies": {},
+  "devDependencies": {}
 }
