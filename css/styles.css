@@ -293,6 +293,7 @@ body {
 
 .form-wrapper .form-title i {
   font-size: 40px;
+  cursor: pointer;
 }
 
 .form-wrapper .form-notice {
