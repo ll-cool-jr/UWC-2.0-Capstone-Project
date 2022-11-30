@@ -275,3 +275,62 @@ body {
   font-size: 16px;
   min-width: 28px;
 }
+
+/* Task Form */
+
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: fit-content;
+  background-color: white;
+  box-shadow: var(--shadow-m);
+  padding: 20px 40px;
+  border-radius: var(--radius-m);
+}
+
+.form-wrapper .form-title i {
+  font-size: 40px;
+}
+
+.form-wrapper .form-notice {
+  font-size: 13px;
+  color: var(--neutral-500);
+}
+
+.form-required {
+  color: var(--danger-500);
+}
+
+.form-label {
+  margin-bottom: 4px;
+  color: var(--neutral-650);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+#form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#form .form-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#form .form-btn button {
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
+#form .form-select__section {
+  width: 48%;
+}
+
+#form .form-select {
+  padding: 0.375rem 0.75rem;
+}
