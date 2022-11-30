@@ -18,9 +18,11 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/styles.css" />
   <script src="https://kit.fontawesome.com/1c066e88f1.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 
 <body>
+  <div id="modal-backdrop" class="d-none"></div>
   <div class="container-fluid m-0 p-0">
     <div class="row m-0">
       <div class="col-2 p-0">
@@ -61,12 +63,14 @@
         <header id="header">
           <h1>Dashboard</h1>
         </header>
-        <main></main>
+        <main>
+          <button id="open-form-btn">+Create Task</button>
+        </main>
       </div>
     </div>
 
     <!-- CREATING TASK FORM -->
-    <div class="form-wrapper" id="form-wrapper">
+    <div class="d-none form-wrapper" id="form-wrapper">
       <div class="form-title d-flex justify-content-between">
         <h1 class="mb-0">
           Create task: Task-<span class="task-no">01</span>
@@ -101,10 +105,7 @@
             Assignee<span class="form-required">*</span>
           </label>
           <select id="assignee" class="form-select form-select-sm" aria-label="assignee">
-            <option selected>Choose Assignee</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="" disabled selected>Choose Assignee</option>
           </select>
         </div>
 
@@ -115,10 +116,7 @@
                 Reporter<span class="form-required">*</span>
               </label>
               <select id="reporter" class="form-select form-select-sm" aria-label="reporter">
-                <option selected>Choose Reporter</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="" disabled selected>Choose Reporter</option>
               </select>
             </div>
             <div class="form-select__section p-0">
@@ -126,10 +124,10 @@
                 Priority<span class="form-required">*</span>
               </label>
               <select id="priority" class="form-select form-select-sm" aria-label="priority">
-                <option selected>Choose Priority</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="" disabled selected>Choose Priority</option>
+                <option value="1">low</option>
+                <option value="2">medium</option>
+                <option value="3">high</option>
               </select>
             </div>
           </div>
@@ -142,10 +140,7 @@
                 Vehicles<span class="form-required">*</span>
               </label>
               <select id="vehicle" class="form-select form-select-sm" aria-label="vehicle">
-                <option selected>Choose Vehicle</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="" disabled selected>Choose Vehicle</option>
               </select>
             </div>
             <div class="form-select__section p-0">
@@ -153,10 +148,7 @@
                 MCPs<span class="form-required">*</span>
               </label>
               <select id="mcp" class="form-select form-select-sm" aria-label="mcp">
-                <option selected>Choose MCP</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="" disabled selected>Choose MCP</option>
               </select>
             </div>
           </div>
