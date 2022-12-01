@@ -69,7 +69,7 @@ if (state.page != pages) {
 }
 
 $('.page').on('click', function() {
-  $('#table-body').empty()
+  $('#table-mcp').empty()
 
   state.page = Number($(this).val())
 
@@ -80,7 +80,7 @@ $('.page').on('click', function() {
 
 
 function buildTable() {
-var table = $('#table-body')
+var table = $('#table-mcp')
 
 var data = pagination(state.querySet, state.page, state.rows)
 var myList = data.querySet
@@ -98,8 +98,8 @@ for (var i = 0; i < myList.length; i++) {
           <td class="pt-4">${myList[i].currentCapacity}</td>
           <td class="pt-4">${myList[i].MaxCapacity}</td>
           <td> 
-            <button type="button" class="btn"><i class="fa-solid fa-edit"></i></button>
-            <button type="button" class="btn"><i class="fa-solid fa-trash"></i></button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-edit"></i></button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>` 
   var row = row1 + row2 + row3
@@ -108,8 +108,3 @@ for (var i = 0; i < myList.length; i++) {
 
 pageButtons(data.pages)
 }
-
-
-
-
-
