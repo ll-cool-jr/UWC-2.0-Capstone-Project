@@ -69,6 +69,7 @@
             </ul>
           </nav>
         </div>
+
         <div class="content col p-0 overflow-hidden ">
           <header id="header">
             <h1>MCPs Management</h1>
@@ -101,8 +102,11 @@
                 <h2><i class="fa-solid fa-file-text"> </i> MCPs </h2>
               </div>
               
+              <!-- Button trigger modal -->
               <div class="flex-container">
-                <button type="button" class="btn btn_style"> + Adding MCP </button>
+                <button type="button" class="btn btn_style" data-bs-toggle="modal" data-bs-target="#addModal">
+                  + Adding MCP
+                </button>
               </div>
 
               <div class="border border-light text-center mt-2">
@@ -117,7 +121,7 @@
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
-                  <tbody class="" id="table-body">
+                  <tbody class="" id="table-mcp">
                     
                   </tbody>
                 </table>
@@ -129,6 +133,64 @@
             </div>
 
           </main>
+
+          <!-- Adding Modal -->
+          <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Adding an MCP</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn_style">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edit Modal -->
+          <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit an MCP</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn_style">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delete Modal -->
+          <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Delete an MCP</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn_style">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
