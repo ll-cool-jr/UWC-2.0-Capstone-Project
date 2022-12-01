@@ -342,6 +342,10 @@ body {
   background-color: rgba(238,164,164,1);
 }
 
+.prog {
+  color: var(--warning-500);
+}
+
 .btn_style{
   border-color: var(--primary-500);
   color: var(--primary-500);

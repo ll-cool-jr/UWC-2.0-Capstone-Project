@@ -1,4 +1,5 @@
 import MCPs from "../constants/MCPs.js";
+import Vehicles from "../constants/vehicles.js"
 
 UnfilledCount(MCPs)
 OverloadedCount(MCPs)

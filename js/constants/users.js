@@ -4,6 +4,8 @@ export default [
     avatar: "https://robohash.org/itaquequidemquisquam.png?size=50x50&set=set1",
     email: "admin@gmail.com",
     type: "Collector",
+    status: "Unavailable",
+    name: "Nguyen Van A",
     phone: "023 456 7891",
     username: "admin",
     password: "123"
@@ -13,6 +15,8 @@ export default [
     avatar: "https://robohash.org/itaquequidemquisquam.png?size=50x50&set=set1",
     email: "egegg0@dailymail.co.uk",
     type: "Collector",
+    status: "Available",
+    name: "Nguyen Van B",
     phone: "981 576 0075",
     username: "cchiommienti0",
     password: "123"
@@ -22,6 +26,8 @@ export default [
     avatar: "https://robohash.org/facereautemvelit.png?size=50x50&set=set1",
     email: "mgoodier1@deviantart.com",
     type: "Collector",
+    status: "Progress",
+    name: "Nguyen Van C",
     phone: "176 677 8143",
     username: "lbowick1",
     password: "123"
@@ -31,6 +37,8 @@ export default [
     avatar: "https://robohash.org/quidemaddolorum.png?size=50x50&set=set1",
     email: "kcorthes2@histats.com",
     type: "Janitor",
+    status: "Available",
+    name: "Nguyen Van D",
     phone: "289 831 6507",
     username: "mmccaughren2",
     password: "123"
@@ -40,6 +48,8 @@ export default [
     avatar: "https://robohash.org/enimquisint.png?size=50x50&set=set1",
     email: "wlainge3@forbes.com",
     type: "Janitor",
+    status: "Progress",
+    name: "Nguyen Van E",
     phone: "303 167 9798",
     username: "bskillington3",
     password: "123"
@@ -49,6 +59,8 @@ export default [
     avatar: "https://robohash.org/modivelitrerum.png?size=50x50&set=set1",
     email: "brampling4@goodreads.com",
     type: "Janitor",
+    status: "Progress",
+    name: "Nguyen Van F",
     phone: "454 359 4556",
     username: "pchisman4",
     password: "123"
@@ -59,6 +71,8 @@ export default [
       "https://robohash.org/dolordoloremqueoccaecati.png?size=50x50&set=set1",
     email: "mburmingham5@economist.com",
     type: "Janitor",
+    status: "Unavailable",
+    name: "Nguyen Van G",
     phone: "197 393 6121",
     username: "rtorri5",
     password: "123"
@@ -69,6 +83,8 @@ export default [
       "https://robohash.org/blanditiisquosdistinctio.png?size=50x50&set=set1",
     email: "csummersett6@senate.gov",
     type: "Janitor",
+    status: "Available",
+    name: "Nguyen Van H",
     phone: "749 182 1289",
     username: "sbolter6",
     password: "123"
@@ -79,6 +95,8 @@ export default [
       "https://robohash.org/voluptatibusreprehenderitesse.png?size=50x50&set=set1",
     email: "ehalesworth7@ameblo.jp",
     type: "Janitor",
+    status: "Available",
+    name: "Nguyen Van A",
     phone: "980 317 6406",
     username: "dcurphey7",
     password: "123"
@@ -88,6 +106,8 @@ export default [
     avatar: "https://robohash.org/iurenatusquisquam.png?size=50x50&set=set1",
     email: "rchaloner8@buzzfeed.com",
     type: "Janitor",
+    status: "Progress",
+    name: "Nguyen Van A",
     phone: "975 875 0098",
     username: "hmatkin8",
     password: "123"
@@ -97,6 +117,8 @@ export default [
     avatar: "https://robohash.org/eosrepellatsimilique.png?size=50x50&set=set1",
     email: "smacgrath9@woothemes.com",
     type: "Back Officer",
+    status: "Available",
+    name: "Nguyen Van A",
     phone: "212 304 5713",
     username: "wmills9",
     password: "123"
@@ -106,6 +128,8 @@ export default [
     avatar: "https://robohash.org/consequaturmagnamest.png?size=50x50&set=set1",
     email: "cduckera@clickbank.net",
     type: "Collector",
+    status: "Unavailable",
+    name: "Nguyen Van A",
     phone: "478 946 5761",
     username: "afilbya",
     password: "123"
@@ -115,6 +139,8 @@ export default [
     avatar: "https://robohash.org/fugarepellathic.png?size=50x50&set=set1",
     email: "sspoorb@princeton.edu",
     type: "Janitor",
+    status: "Available",
+    name: "Nguyen Van A",
     phone: "760 150 1215",
     username: "awornhamb",
     password: "123"
@@ -124,6 +150,8 @@ export default [
     avatar: "https://robohash.org/illumetquod.png?size=50x50&set=set1",
     email: "ebeadesc@rambler.ru",
     type: "Back Officer",
+    status: "Available",
+    name: "Nguyen Van B",
     phone: "997 569 5801",
     username: "vminetc",
     password: "123"
@@ -133,6 +161,8 @@ export default [
     avatar: "https://robohash.org/magnifugiatsint.png?size=50x50&set=set1",
     email: "cdrohund@livejournal.com",
     type: "Back Officer",
+    status: "Progress",
+    name: "Nguyen Van E",
     phone: "611 146 7056",
     username: "mstronoughd",
     password: "123"
@@ -143,6 +173,8 @@ export default [
       "https://robohash.org/eosexercitationemnumquam.png?size=50x50&set=set1",
     email: "rminchelle@mozilla.com",
     type: "Back Officer",
+    status: "Available",
+    name: "Nguyen Van G",
     phone: "952 563 3431",
     username: "ccaldicote",
     password: "123"
@@ -153,6 +185,8 @@ export default [
       "https://robohash.org/consequaturanimireiciendis.png?size=50x50&set=set1",
     email: "ecrathornef@gnu.org",
     type: "Back Officer",
+    status: "Available",
+    name: "Nguyen Van Ư",
     phone: "546 350 0834",
     username: "jcornhillf",
     password: "123"
@@ -162,6 +196,8 @@ export default [
     avatar: "https://robohash.org/idtotamab.png?size=50x50&set=set1",
     email: "frosleg@bravesites.com",
     type: "Janitor",
+    status: "Available",
+    name: "Nguyen Van J",
     phone: "954 338 8176",
     username: "kmcmurtyrg",
     password: "123"
@@ -171,6 +207,8 @@ export default [
     avatar: "https://robohash.org/veniamiustoeum.png?size=50x50&set=set1",
     email: "lruprichh@unc.edu",
     type: "Collector",
+    status: "Available",
+    name: "Nguyen Van Y",
     phone: "236 745 1407",
     username: "menticknaph",
     password: "123"
@@ -180,6 +218,8 @@ export default [
     avatar: "https://robohash.org/culpabeataequi.png?size=50x50&set=set1",
     email: "smuccinoi@t.co",
     type: "Janitor",
+    status: "Unavailable",
+    name: "Nguyen Van N",
     phone: "342 924 5124",
     username: "hspoerli",
     password: "123"
@@ -189,6 +229,8 @@ export default [
     avatar: "https://robohash.org/asperioresiurefacere.png?size=50x50&set=set1",
     email: "jgateshillj@is.gd",
     type: "Collector",
+    status: "Progress",
+    name: "Nguyen Van F",
     phone: "919 380 2797",
     username: "svanshinj",
     password: "123"
