@@ -280,13 +280,13 @@ body {
   cursor: pointer;
 }
 .o-tasks {
-  border-color: var(--color4-600);
-  color: var(--color4-600);
+  border-color: var(--success-600);
+  color: var(--success-600);
   position: relative;
 }
 
 .o-tasks:hover {
-  box-shadow: 0 0px 10px 0 var(--color4-300);
+  box-shadow: 0 0px 10px 0 var(--success-300);
   cursor: pointer;
 }
 
@@ -299,19 +299,21 @@ body {
 }
 
 .o-tasks .task-progress {
-  background-color: var(--color4-200);
+  background-color: var(--success-200);
   width: 90%;
   position: absolute;
   bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 10px;
 }
 
 .o-tasks .task-progress .front {
   height: 4px;
   width: 0;
-  background-color: var(--color4-600);
+  background-color: var(--success-600);
   transition: width 0.8s ease-in-out;
+  border-radius: 10px;
 }
 
 .quantity {
