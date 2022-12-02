@@ -96,7 +96,7 @@ body {
 }
 
 .modal-content {
-  width: 60vw;
+  width: 50vw;
 }
 
 .modal-content {
@@ -129,7 +129,7 @@ body {
 }
 
 #form {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -311,6 +311,7 @@ body {
   height: 4px;
   width: 0;
   background-color: var(--color4-600);
+  transition: width 0.8s ease-in-out;
 }
 
 .quantity {
