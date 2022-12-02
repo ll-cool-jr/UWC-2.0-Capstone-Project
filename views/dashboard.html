@@ -109,15 +109,13 @@
                       <div class="task-content">
                         <div class="c-content">
                           <p>Tasks</p>
-                          <p class='quantity'>50%</p>
+                          <p class='quantity'>0%</p>
                         </div>
                         <i class="fa-solid fa-list"></i>
                       </div>
                       <div class="task-progress">
-                        <div class="h50 front">
+                        <div class="front">
 
-                        </div>
-                        <div class="h50 back">
                         </div>
                       </div>
                     </div>
@@ -125,39 +123,12 @@
                 </div>
               </div>
             </div>
-            <div class="overview-all-graph">
-              <div class="circular-graph">
-                <p class="og-title">Waste Proportion In Different Areas</p>
-                <div class="overview-graph">
-                  <div id="my-pie-chart"></div>
-                  <div class="graph-annotation">
-                    <p class="m-0">Annotation:</p>
-                    <ul>
-                      <li class="annotation">
-                        <div class="district district-1"></div>
-                        <div class="p">
-                          District 1
-                        </div>
-                      </li>
-                      <li class="annotation">
-                        <div class="district district-2"></div>
-                        <div class="p">
-                          District 2
-                        </div>
-                      </li>
-                      <li class="annotation">
-                        <div class="district district-o"></div>
-                        <div class="p">
-                          Others
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-
-                </div>
+            <div class="row mx-0 gap-3 mt-4">
+              <div class="graph col-4 p-4">
+                <canvas id="wastedProportion"></canvas>
               </div>
-              <div class="bar-chart">
-                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+              <div class="graph col p-4">
+                <canvas id="wastedLast5Days"></canvas>
               </div>
 
             </div>
@@ -198,26 +169,17 @@
               <label for="description" class="form-label">
                 Description<span class="form-required">*</span>
               </label>
-              <textarea class="form-control" id="description" rows="2"></textarea>
-            </div>
-
-            <div class="mb-3">
-              <label for="assignee" class="form-label">
-                Assignee<span class="form-required">*</span>
-              </label>
-              <select id="assignee" class="form-select form-select-sm" aria-label="assignee">
-                <option value="" disabled selected>Choose Assignee</option>
-              </select>
+              <textarea class="form-control" id="description" rows="3"></textarea>
             </div>
 
             <div class="mb-3">
               <div class="row m-0 justify-content-between">
                 <div class="form-select__section p-0">
-                  <label for="reporter" class="form-label">
-                    Reporter<span class="form-required">*</span>
+                  <label for="assignee" class="form-label">
+                    Assignee<span class="form-required">*</span>
                   </label>
-                  <select id="reporter" class="form-select form-select-sm" aria-label="reporter">
-                    <option value="" disabled selected>Choose Reporter</option>
+                  <select id="assignee" class="form-select form-select-sm" aria-label="assignee">
+                    <option value="" disabled selected>Choose Assignee</option>
                   </select>
                 </div>
                 <div class="form-select__section p-0">
@@ -265,46 +227,12 @@
   </div>
 
   <script src="../js/constants/vehicles.js" type="module"></script>
-  <script src="../js/controllers/form.js" type="module"></script>
+  <script src="../js/controllers/dashboard.js" type="module"></script>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   <script src="//d3js.org/d3.v3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js">
-  </script>
-  <script>
-    var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-    var yValues = [54, 52, 50, 48, 52];
-    var barColors = ["#f22128", "#1dd75b", "#4069e5", "#ed7d2d", "#7b390b"];
-
-    new Chart("myChart", {
-      type: "bar",
-      data: {
-        labels: xValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yValues
-        }]
-      },
-      options: {
-        plugins: {
-          legend: { display: false },
-          title: {
-            display: true,
-            text: "Waste Collected And Handled In The Last 5 Days In Tons",
-            padding: {
-              bottom: 20,
-              top: 0
-            },
-            font: {
-              size: 20,
-            },
-            color: "#075794"
-          }
-        }
-      }
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
 </body>
 
 </html>

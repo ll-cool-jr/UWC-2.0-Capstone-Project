@@ -13,12 +13,12 @@ formLogin?.addEventListener('submit', async (e) => {
 	const email = emailLogin.value;
 	const password = passwordLogin.value;
 
-	// const response = await axios.post("https://localhost:7231/api/users", { username: email, password });
-	// const responseData = response.data;
-	// const isAuth = responseData.isUserExisted;
+	const response = await axios.post("https://localhost:7231/api/users", { username: email, password });
+	const responseData = response.data;
+	const isAuth = responseData.isUserExisted;
 
-	if (true) {
-		// sessionStorage.setItem('AUTH', JSON.stringify(responseData));
+	if (isAuth) {
+		sessionStorage.setItem('AUTH', JSON.stringify(responseData));
 		window.location.href = 'views/dashboard.html';
 	}
 });
