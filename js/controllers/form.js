@@ -8,8 +8,8 @@ const formReporter = document.getElementById("reporter");
 const formPriority = document.getElementById("priority");
 const formVehicle = document.getElementById("vehicle");
 const formMcp = document.getElementById("mcp");
+const openFormBtn = document.querySelector(".create-btn");
 const closeFormBtn = document.getElementById("close-form-btn");
-const openFormBtn = document.getElementById("open-form-btn");
 const baseUrl = "https://localhost:7231/api";
 
 const getData = async () => {
