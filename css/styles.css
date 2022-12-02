@@ -86,13 +86,20 @@ body {
 
 /* Task Form */
 
-.form-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.modal-dialog {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: fit-content;
+}
+
+.modal-content {
   width: 60vw;
-  height: fit-content;
+}
+
+.modal-content {
   background-color: white;
   box-shadow: var(--shadow-m);
   padding: 20px 40px;
@@ -100,12 +107,7 @@ body {
   z-index: 1000;
 }
 
-.form-wrapper .form-title i {
-  font-size: 40px;
-  cursor: pointer;
-}
-
-.form-wrapper .form-notice {
+.modal-content .form-notice {
   font-size: 13px;
   color: var(--neutral-500);
 }
@@ -121,6 +123,11 @@ body {
   font-size: 15px;
 }
 
+#form-wrapper .btn-close:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
 #form {
   width: 60%;
   margin: 0 auto;
@@ -134,7 +141,19 @@ body {
 
 #form .form-btn button {
   background-color: var(--primary-500);
-  border-color: var(--primary-500);
+  color: white;
+  outline: 0;
+  border: 0;
+  padding: 6px 18px;
+  border-radius: var(--radius-m);
+}
+
+#form .form-btn button:hover {
+  background-color: var(--primary-550);
+}
+
+#form .form-btn button:active {
+  transform: scale(0.98);
 }
 
 #form .form-select__section {
@@ -186,9 +205,6 @@ body {
   margin: 0;
 }
 
-.header-btn {
-}
-
 .create-btn {
   border-radius: 4px;
   padding: 4px 8px;
@@ -197,6 +213,10 @@ body {
   border-style: solid;
   color: var(--primary-500);
   outline: 0;
+}
+
+.create-btn:hover {
+  background-color: var(--primary-100);
 }
 
 .body-upper-table .row {

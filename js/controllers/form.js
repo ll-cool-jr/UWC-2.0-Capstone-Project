@@ -9,7 +9,6 @@ const formPriority = document.getElementById("priority");
 const formVehicle = document.getElementById("vehicle");
 const formMcp = document.getElementById("mcp");
 const openFormBtn = document.querySelector(".create-btn");
-const closeFormBtn = document.getElementById("close-form-btn");
 const baseUrl = "https://localhost:7231/api";
 
 const getData = async () => {
@@ -45,15 +44,7 @@ form.addEventListener("submit", (e) => {
   console.log(taskData);
 });
 
-closeFormBtn.addEventListener("click", (e) => {
-  formWrapper.classList.add("d-none");
-  modalBackdrop.classList.add("d-none");
-});
-
 openFormBtn.addEventListener("click", (e) => {
-  formWrapper.classList.remove("d-none");
-  modalBackdrop.classList.remove("d-none");
-
   let data;
   const storedData = sessionStorage.getItem("DATA");
   if (storedData) data = JSON.parse(storedData);

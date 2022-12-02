@@ -73,7 +73,9 @@
                   <p>Overview</p>
                 </div>
                 <div class="header-btn">
-                  <button class="create-btn">&#43; Create task</button>
+                  <button type="button" class="create-btn" data-bs-toggle="modal" data-bs-target="#modal-form">&#43;
+                    Create
+                    task</button>
                 </div>
               </div>
               <div class="overview_body">
@@ -165,94 +167,100 @@
     </div>
 
     <!-- CREATING TASK FORM -->
-    <div class="d-none form-wrapper" id="form-wrapper">
-      <div class="form-title d-flex justify-content-between">
-        <h1 class="mb-0">
-          Create task: Task-<span class="task-no">01</span>
-        </h1>
 
-        <i id="close-form-btn" class="fa-solid fa-xmark"></i>
+    <div class="modal fade" id="modal-form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" id="form-wrapper">
+          <div class="modal-header px-0 mb-3">
+            <div class="modal-header__title">
+              <h1 class="m-0">
+                Create task: Task-<span class="task-no">01</span>
+              </h1>
+              <p class="m-0 form-notice">
+                All fields marked with an asterisk (<span class="form-required">*</span>) are required
+              </p>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="#" method="post" id="form">
+            <div class="mb-3">
+              <label for="label" class="form-label">
+                Label<span class="form-required">*</span>
+              </label>
+              <input type="text" class="form-control" id="label" aria-describedby="labelHelp" />
+              <div id="labelHelp" class="form-text">
+                Caption goes here
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">
+                Description<span class="form-required">*</span>
+              </label>
+              <textarea class="form-control" id="description" rows="2"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="assignee" class="form-label">
+                Assignee<span class="form-required">*</span>
+              </label>
+              <select id="assignee" class="form-select form-select-sm" aria-label="assignee">
+                <option value="" disabled selected>Choose Assignee</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <div class="row m-0 justify-content-between">
+                <div class="form-select__section p-0">
+                  <label for="reporter" class="form-label">
+                    Reporter<span class="form-required">*</span>
+                  </label>
+                  <select id="reporter" class="form-select form-select-sm" aria-label="reporter">
+                    <option value="" disabled selected>Choose Reporter</option>
+                  </select>
+                </div>
+                <div class="form-select__section p-0">
+                  <label for="priority" class="form-label">
+                    Priority<span class="form-required">*</span>
+                  </label>
+                  <select id="priority" class="form-select form-select-sm" aria-label="priority">
+                    <option value="" disabled selected>Choose Priority</option>
+                    <option value="1">low</option>
+                    <option value="2">medium</option>
+                    <option value="3">high</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <div class="row m-0 justify-content-between">
+                <div class="form-select__section p-0">
+                  <label for="vehicle" class="form-label">
+                    Vehicles<span class="form-required">*</span>
+                  </label>
+                  <select id="vehicle" class="form-select form-select-sm" aria-label="vehicle">
+                    <option value="" disabled selected>Choose Vehicle</option>
+                  </select>
+                </div>
+                <div class="form-select__section p-0">
+                  <label for="mcp" class="form-label">
+                    MCPs<span class="form-required">*</span>
+                  </label>
+                  <select id="mcp" class="form-select form-select-sm" aria-label="mcp">
+                    <option value="" disabled selected>Choose MCP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-btn">
+              <button type="submit">Create</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <p class="mb-4 form-notice">
-        All fields marked with an asterisk (<span class="form-required">*</span>) are required
-      </p>
-      <form action="#" method="post" id="form">
-
-        <div class="mb-3">
-          <label for="label" class="form-label">
-            Label<span class="form-required">*</span>
-          </label>
-          <input type="text" class="form-control" id="label" aria-describedby="labelHelp" />
-          <div id="labelHelp" class="form-text">
-            Caption goes here
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="description" class="form-label">
-            Description<span class="form-required">*</span>
-          </label>
-          <textarea class="form-control" id="description" rows="2"></textarea>
-        </div>
-
-        <div class="mb-3">
-          <label for="assignee" class="form-label">
-            Assignee<span class="form-required">*</span>
-          </label>
-          <select id="assignee" class="form-select form-select-sm" aria-label="assignee">
-            <option value="" disabled selected>Choose Assignee</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <div class="row m-0 justify-content-between">
-            <div class="form-select__section p-0">
-              <label for="reporter" class="form-label">
-                Reporter<span class="form-required">*</span>
-              </label>
-              <select id="reporter" class="form-select form-select-sm" aria-label="reporter">
-                <option value="" disabled selected>Choose Reporter</option>
-              </select>
-            </div>
-            <div class="form-select__section p-0">
-              <label for="priority" class="form-label">
-                Priority<span class="form-required">*</span>
-              </label>
-              <select id="priority" class="form-select form-select-sm" aria-label="priority">
-                <option value="" disabled selected>Choose Priority</option>
-                <option value="1">low</option>
-                <option value="2">medium</option>
-                <option value="3">high</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-4">
-          <div class="row m-0 justify-content-between">
-            <div class="form-select__section p-0">
-              <label for="vehicle" class="form-label">
-                Vehicles<span class="form-required">*</span>
-              </label>
-              <select id="vehicle" class="form-select form-select-sm" aria-label="vehicle">
-                <option value="" disabled selected>Choose Vehicle</option>
-              </select>
-            </div>
-            <div class="form-select__section p-0">
-              <label for="mcp" class="form-label">
-                MCPs<span class="form-required">*</span>
-              </label>
-              <select id="mcp" class="form-select form-select-sm" aria-label="mcp">
-                <option value="" disabled selected>Choose MCP</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-btn">
-          <button type="submit" class="btn btn-primary ms-auto">Create</button>
-        </div>
-      </form>
     </div>
   </div>
 
