@@ -1,0 +1,68 @@
+@import "./constants.css";
+
+table {
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  width: 70vw;
+  padding: 20px 30px;
+}
+
+.table-header {
+  background-color: var(--primary-500);
+  color: white;
+  border: 0;
+  padding: 0;
+  padding: 16px 0;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.calendar-header {
+  padding: 0.5rem;
+  width: 12%;
+  border: 1px solid var(--neutral-300);
+  font-size: 0.875rem;
+  height: 3rem;
+  text-align: center;
+}
+
+.calendar-body__row {
+  height: 5rem;
+}
+
+.row-cell {
+  width: 10rem;
+  height: 6rem;
+  padding: 0.25rem;
+  overflow: auto;
+  transition: background-color 0.2s linear;
+  cursor: pointer;
+  border: 1px solid var(--neutral-300);
+}
+
+.row-cell:hover {
+  background-color: var(--neutral-300);
+}
+
+.row-cell__extend {
+  background-color: var(--neutral-200);
+}
+
+.row-wrapper {
+  height: 100%;
+}
+
+.row-title {
+  color: var(--neutral-500);
+}
+
+.row-content {
+  padding: 0.5rem 0;
+  width: 100%;
+}
