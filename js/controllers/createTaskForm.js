@@ -75,7 +75,7 @@ openFormBtn.addEventListener("click", (e) => {
 	mcpOptions.map((opt) => {
 		const option = document.createElement("option");
 		option.value = opt.id;
-		option.text = opt.id + "    -    " + opt.address;
+		option.text = opt.address;
 
 		formMcp.appendChild(option);
 	});

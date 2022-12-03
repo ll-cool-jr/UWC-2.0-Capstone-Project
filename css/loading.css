@@ -1,0 +1,38 @@
+@import "./constants.css";
+
+#loading-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-color: white;
+  opacity: 1;
+}
+
+#loading-spinner .loader {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 10px solid var(--primary-150);
+  border-top-color: var(--primary-550);
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+#loading-spinner[aria-hidden="false"] {
+  display: flex;
+}
+
+#loading-spinner[aria-hidden="true"] {
+  display: none;
+}

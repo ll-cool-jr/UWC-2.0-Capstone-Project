@@ -3,6 +3,7 @@ const quantityContent = document.querySelectorAll(".c-content .quantity");
 const taskProgress = document.querySelector(".task-progress .front");
 const pieChart = document.getElementById("wastedProportion");
 const barChart = document.getElementById("wastedLast5Days");
+const loadingSpinner = document.getElementById("loading-spinner");
 
 const graphColors = ["#f43b41", "#31e36c", "#6b8beb", "#ef9834", "#9a580c"];
 
@@ -66,7 +67,8 @@ const displayChartData = (
 };
 
 const getData = async () => {
-  const userResponse = await axios.get(`${baseUrl}/users`);
+  loadingSpinner.setAttribute("aria-hidden", "false");
+  const userResponse = await axios.get(`${baseUrl}/users/employee`);
   const mcpResponse = await axios.get(`${baseUrl}/mcp`);
   const vehicleResponse = await axios.get(`${baseUrl}/vehicle`);
   const taskResponse = await axios.get(`${baseUrl}/tasks`);
@@ -79,6 +81,8 @@ const getData = async () => {
   data.wasteData = wasteDataResponse.data.data;
 
   sessionStorage.setItem("DATA", JSON.stringify(data));
+  location.reload();
+  loadingSpinner.setAttribute("aria-hidden", "true");
 };
 
 const displayData = () => {
