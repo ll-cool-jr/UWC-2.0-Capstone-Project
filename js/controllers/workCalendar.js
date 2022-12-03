@@ -1,6 +1,5 @@
 import { datesInMonths, days } from "../constants/calendar.js";
-
-const fetchedData = JSON.parse(sessionStorage.getItem('DATA'));
+import { formatNumber } from "./helpers.js";
 
 const workCalendarHeader = document.querySelector("#work-calendar thead tr");
 const workCalendarBody = document.querySelector("#work-calendar tbody");
@@ -84,7 +83,7 @@ const renderWorkCalendar = () => {
 
 renderWorkCalendar();
 
-const mockTasks = [{ label: "test", createAt: "12/10/2022" }, { label: "as", createAt: "12/31/2022" }];
+const mockTasks = [{ label: "test", createAt: "12/10/2022 13:00" }, { label: "asdfa", createAt: "12/31/2022 4:50" }];
 const allTableContentData = document.querySelectorAll('.row-content');
 
 allTableContentData.forEach((item) => {
@@ -92,11 +91,14 @@ allTableContentData.forEach((item) => {
 });
 
 mockTasks.forEach((item) => {
-  const date = new Date(item.createAt).getDate();
+  const dueDate = new Date(item.createAt);
+  const date = dueDate.getDate();
+  const hours = dueDate.getHours();
+  const minutes = dueDate.getMinutes();
   const task = document.createElement('div');
   task.classList.add("row-content__task");
   task.style.backgroundColor = getRandomColor();
-  task.innerHTML = item.label;
+  task.innerHTML = `${item.label} - ${formatNumber(hours)}:${formatNumber(minutes)}`;
 
   allTableContentData[date - 1].appendChild(task);
 })

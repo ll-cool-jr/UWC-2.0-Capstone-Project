@@ -1,3 +1,5 @@
+import { formatNumber } from "./helpers.js";
+
 const baseUrl = "https://localhost:7231/api";
 const form = document.getElementById("form");
 const formWrapper = document.getElementById("form-wrapper");
@@ -44,7 +46,7 @@ openFormBtn.addEventListener("click", (e) => {
 	const data = JSON.parse(sessionStorage.getItem("DATA"));
 
 	const taskId = data.tasks.length + 1;
-	taskNo.innerHTML = taskId >= 10 ? taskId : `0${taskId}`;
+	taskNo.innerHTML = formatNumber(taskId);
 
 	const userOptions = data.users.map((user) => {
 		return {
