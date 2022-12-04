@@ -23,9 +23,9 @@
 
 <body>
   <div class="container-fluid m-0 p-0">
-    <div class="row m-0">
+    <div class="row m-0 overflow-hidden">
       <div class="col-2 p-0">
-        <nav class="sidenav pt-4">
+        <nav class="sidenav pt-4 h-100">
           <div class="sidenav-logo text-center">
             <img src="../images/BK-logo.png" alt="logo" />
           </div>
@@ -59,7 +59,7 @@
         </nav>
       </div>
 
-      <div class="content col p-0 overflow-hidden ">
+      <div class="content col p-0 h-100">
         <header id="header">
           <h1>MCPs Management</h1>
         </header>
@@ -89,10 +89,6 @@
           <div class="content-table mt-3">
             <div class="sub-header">
               <h2><i class="fa-solid fa-file-text"> </i> MCPs </h2>
-            </div>
-
-            <!-- Button trigger modal -->
-            <div class="flex-container">
               <button type="button" class="btn btn_style" data-bs-toggle="modal" data-bs-target="#addModal">
                 + Adding MCP
               </button>
@@ -103,10 +99,10 @@
                 <thead>
                   <tr>
                     <th scope="col"><i class="fa-solid fa-check"></i>MCP ID</th>
-                    <th scope="col">Status<i class="fa-solid fa-align-left"></i></th>
-                    <th scope="col">Adress<i class="fa-solid fa-align-left"> </i></th>
-                    <th scope="col">Current Capacity<i class="fa-solid fa-align-left"> </i></th>
-                    <th scope="col">Max Capacity<i class="fa-solid fa-align-left"> </i></th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Adress</th>
+                    <th scope="col">Current Capacity</th>
+                    <th scope="col">Max Capacity</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -116,9 +112,7 @@
               </table>
             </div>
           </div>
-          <div class="container position-relative m-5">
-            <div id="pagination-wrapper" class="position-absolute bottom-0 end-0"></div>
-          </div>
+          <div id="pagination-wrapper" class="d-flex justify-content-end"></div>
       </div>
 
       </main>

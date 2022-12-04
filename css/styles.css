@@ -333,6 +333,12 @@ body {
 
 /* 3 pages */
 
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .sub-header i {
   color: var(--primary-500);
   font-size: 20px;
