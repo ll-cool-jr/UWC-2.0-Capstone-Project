@@ -330,3 +330,91 @@ body {
   justify-content: space-between;
   box-shadow: var(--shadow-l);
 }
+
+/* 3 pages */
+
+.sub-header i {
+  color: var(--primary-500);
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.sub-header h2 {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+}
+
+.overview-card h5 {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.overview-card h3 {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.overview-card p {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 10px;
+  color: rgba(188, 193, 202, 1);
+}
+
+.table i {
+  margin-right: 3px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.cur_pag_style {
+  color: var(--primary-100);
+  margin: 2px;
+  background-color: var(--primary-500);
+  border: none;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.uncur_pag_style {
+  background-color: white;
+  border: none;
+  margin: 2px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.unfilled {
+  background-color: var(--primary-100);
+  color: var(--primary-500);
+}
+
+.overloaded {
+  color: rgba(224, 88, 88, 1);
+  background-color: rgba(238, 164, 164, 1);
+}
+
+.prog {
+  color: var(--warning-500);
+}
+
+.btn_style {
+  border-color: var(--primary-500);
+  color: var(--primary-500);
+}
+
+.btn_style:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-500);
+  background-color: var(--primary-100);
+}
+
+.flex-container {
+  display: flex;
+  justify-content: flex-end;
+}
