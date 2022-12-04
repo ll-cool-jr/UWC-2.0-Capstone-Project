@@ -1,59 +1,30 @@
-import users from "../constants/users.js";
+const users = JSON.parse(sessionStorage.getItem('DATA')).users;
 
-JanitorsAvailableCount(users);
-JanitorsProgressingCount(users);
-CollectorsAvailableCount(users);
-CollectorsProgressingCount(users);
+janitorsCountFunc(users);
+collectorsCountFunc(users);
 
-
-function JanitorsAvailableCount(data) {
-	var JanitorsAvailableCount = document.getElementById('JanitorsAvailableCount');
+function janitorsCountFunc(data) {
+	var janitorsCount = document.getElementById('janitorsCount');
 
 	var count = 0;
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Available" && data[i].type == "Janitor") {
+		if (data[i].role === "Janitor") {
 			count++;
 		}
 	}
 
-	JanitorsAvailableCount.innerHTML = `${count}`;
+	janitorsCount.innerHTML = `${count}`;
 }
 
-function JanitorsProgressingCount(data) {
-	var JanitorsProgressingCount = document.getElementById('JanitorsProgressingCount');
+function collectorsCountFunc(data) {
+	var collectorsCount = document.getElementById('collectorsCount');
 
 	var count = 0;
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Progress" && data[i].type == "Janitor") {
+		if (data[i].role === "Collector") {
 			count++;
 		}
 	}
 
-	JanitorsProgressingCount.innerHTML = `${count}`;
-}
-
-function CollectorsAvailableCount(data) {
-	var CollectorsAvailableCount = document.getElementById('CollectorsAvailableCount');
-
-	var count = 0;
-	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Available" && data[i].type == "Collector") {
-			count++;
-		}
-	}
-
-	CollectorsAvailableCount.innerHTML = `${count}`;
-}
-
-function CollectorsProgressingCount(data) {
-	var CollectorsProgressingCount = document.getElementById('CollectorsProgressingCount');
-
-	var count = 0;
-	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Progress" && data[i].type == "Collector") {
-			count++;
-		}
-	}
-
-	CollectorsProgressingCount.innerHTML = `${count}`;
+	collectorsCount.innerHTML = `${count}`;
 }

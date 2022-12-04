@@ -1,4 +1,4 @@
-import MCPs from "../constants/MCPs.js";
+const MCPs = JSON.parse(sessionStorage.getItem('DATA')).mcps;
 
 var state = {
 	'querySet': MCPs,
@@ -95,8 +95,8 @@ function buildTable() {
 
 		var row3 = `
           <td class="pt-4">${myList[i].address}</td>
-          <td class="pt-4">${myList[i].currentCapacity}</td>
-          <td class="pt-4">${myList[i].MaxCapacity}</td>
+          <td class="pt-4">${myList[i].currcapacity}</td>
+          <td class="pt-4">${myList[i].maxcapacity}</td>
           <td> 
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-edit"></i></button>
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>

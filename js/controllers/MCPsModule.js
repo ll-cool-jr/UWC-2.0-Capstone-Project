@@ -1,5 +1,4 @@
-import MCPs from "../constants/MCPs.js";
-import Vehicles from "../constants/vehicles.js";
+const MCPs = JSON.parse(sessionStorage.getItem('DATA')).mcps;
 
 UnfilledCount(MCPs);
 OverloadedCount(MCPs);

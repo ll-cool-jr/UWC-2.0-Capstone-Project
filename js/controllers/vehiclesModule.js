@@ -1,4 +1,4 @@
-import Vehicles from "../constants/vehicles.js";
+const Vehicles = JSON.parse(sessionStorage.getItem('DATA')).vehicle;
 
 TruckAvailableCount(Vehicles);
 TruckProgressingCount(Vehicles);
@@ -11,7 +11,7 @@ function TruckAvailableCount(data) {
 
 	var count = 0;
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Available" && data[i].type == "truck") {
+		if (data[i].status === "Available" && data[i].type === "truck") {
 			count++;
 		}
 	}
@@ -24,7 +24,7 @@ function TruckProgressingCount(data) {
 
 	var count = 0;
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Progress" && data[i].type == "truck") {
+		if (data[i].status === "Progress" && data[i].type === "truck") {
 			count++;
 		}
 	}
@@ -37,7 +37,7 @@ function TrollerAvailableCount(data) {
 
 	var count = 0;
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Available" && data[i].type == "troller") {
+		if (data[i].status === "Available" && data[i].type === "troller") {
 			count++;
 		}
 	}
@@ -50,7 +50,7 @@ function TrollerProgressingCount(data) {
 
 	var count = 0;
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].status == "Progress" && data[i].type == "troller") {
+		if (data[i].status === "Progress" && data[i].type === "troller") {
 			count++;
 		}
 	}

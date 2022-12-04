@@ -1,4 +1,4 @@
-import users from "../constants/users.js";
+const users = JSON.parse(sessionStorage.getItem('DATA')).users;
 
 var state = {
 	'querySet': users,
@@ -86,25 +86,19 @@ function buildTable() {
 	var myList = data.querySet;
 
 	for (var i = 0; i < myList.length; i++) {
-		var row1 = `<tr> <td class="pt-4"><img src="${myList[i].avatar}" alt="" class="rounded-circle shadow-4 border"> ${myList[i].id}</td>`;
+		var row1 = `<tr> <td class="pt-4"><img src="${myList[i].avatar}" alt="" class="row-avatar"> ${myList[i].id}</td>`;
 
-		if (myList[i].status == "Available")
-			var row2 = `<td class="pt-4 unfilled">${myList[i].status}</td>`;
-		else if (myList[i].status == "Unavailable")
-			var row2 = `<td class="pt-4 overloaded">${myList[i].status}</td>`;
-		else
-			var row2 = `<td class="pt-4 prog">${myList[i].status}</td>`;
-
-		var row3 = `
-          <td class="pt-4">${myList[i].type}</td>
-          <td class="pt-4">${myList[i].phone}</td>
-          <td class="pt-4">${myList[i].name}</td>
+		var row2 = `
+          <td class="pt-4">${myList[i].role}</td>
+          <td class="pt-4">${myList[i].fullname}</td>
+          <td class="pt-4">${myList[i].email}</td>
+          <td class="pt-4">${myList[i].phonenumber}</td>
           <td> 
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-edit"></i></button>
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>`;
-		var row = row1 + row2 + row3;
+		var row = row1 + row2;
 		table.append(row);
 	}
 

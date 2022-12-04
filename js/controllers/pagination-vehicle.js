@@ -1,4 +1,4 @@
-import vehicles from "../constants/vehicles.js";
+const vehicles = JSON.parse(sessionStorage.getItem('DATA')).vehicle;
 
 var state = {
 	'querySet': vehicles,
@@ -102,8 +102,8 @@ function buildTable() {
 		var row3 = `
           <td class="pt-4">${myList[i].weight}</td>
           <td class="pt-4">${myList[i].capacity}</td>
-          <td class="pt-4">${myList[i].fuel_consumption}</td>
-          <td class="pt-4">${myList[i].username}</td>
+          <td class="pt-4">${myList[i].fuelConsumption}</td>
+          <td class="pt-4">${myList[i].manipulatorNavigation.fullname}</td>
           <td> 
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-edit"></i></button>
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
