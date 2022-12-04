@@ -1,4 +1,12 @@
 const users = JSON.parse(sessionStorage.getItem('DATA')).users;
+import { formatNumber } from "./helpers.js";
+
+const bgColors = ["#9095a0", "#008192", "#8353e2", "#00bdd6", "#9a580c", "#f5555a", "#1dd75b", "#1091f4", "#db3d3d"];
+
+const getRandomColor = () => {
+	const randomIdx = Math.floor(Math.random() * bgColors.length);
+	return bgColors[randomIdx];
+};
 
 var state = {
 	'querySet': users,
@@ -29,7 +37,6 @@ function pageButtons(pages) {
 	var wrapper = document.getElementById('pagination-wrapper');
 
 	wrapper.innerHTML = ``;
-	console.log('Pages:', pages);
 
 	var maxLeft = (state.page - Math.floor(state.window / 2));
 	var maxRight = (state.page + Math.floor(state.window / 2));
@@ -86,8 +93,14 @@ function buildTable() {
 	var myList = data.querySet;
 
 	for (var i = 0; i < myList.length; i++) {
-		var row1 = `<tr> <td class="pt-4"><img src="${myList[i].avatar}" alt="" class="row-avatar"> ${myList[i].id}</td>`;
+		const tr = document.createElement('tr');
+		tr.setAttribute("data-bs-toggle", "modal");
+		tr.setAttribute("data-bs-target", "#work-calendar");
+		tr.setAttribute("data-user", myList[i].fullname);
+		tr.classList.add('personnel-row');
+		tr.innerHTML = ``;
 
+		var row1 = `<td class="pt-4"><img src="${myList[i].avatar}" alt="" class="row-avatar"> ${myList[i].id}</td>`;
 		var row2 = `
           <td class="pt-4">${myList[i].role}</td>
           <td class="pt-4">${myList[i].fullname}</td>
@@ -96,10 +109,36 @@ function buildTable() {
           <td> 
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-edit"></i></button>
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
-          </td>
-        </tr>`;
+          </td>`;
 		var row = row1 + row2;
-		table.append(row);
+		tr.innerHTML = row;
+
+		tr.addEventListener('click', (e) => {
+			const user = tr.getAttribute("data-user");
+			const toDoTasks = users.find(elem => elem.fullname === user).toDoTasks;
+			const allTableContentData = document.querySelectorAll('.row-content');
+
+			allTableContentData.forEach((item) => {
+				item.innerHTML = '';
+			});
+
+			if (toDoTasks.length > 0) {
+				toDoTasks.forEach((item) => {
+
+					const dueDate = new Date(item.createdAt);
+					const date = dueDate.getDate();
+					const hours = dueDate.getHours();
+					const minutes = dueDate.getMinutes();
+					const task = document.createElement('div');
+					task.classList.add("row-content__task");
+					task.style.backgroundColor = getRandomColor();
+					task.innerHTML = `${item.label} - ${formatNumber(hours)}:${formatNumber(minutes)}`;
+
+					allTableContentData[date - 1].appendChild(task);
+				});
+			}
+		});
+		table.append(tr);
 	}
 
 	pageButtons(data.pages);

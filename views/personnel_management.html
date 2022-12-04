@@ -18,6 +18,7 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/pagination.css">
+  <link rel="stylesheet" href="../css/calendar.css">
   <script src="https://kit.fontawesome.com/1c066e88f1.js" crossorigin="anonymous"></script>
 </head>
 
@@ -98,7 +99,7 @@
                 <thead>
                   <tr>
                     <th scope="col"><i class="fa-solid fa-check"></i>Personnel ID</th>
-                    <th scope="col">Type</th>
+                    <th scope="col">Role</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone Number</th>
@@ -157,6 +158,27 @@
           </div>
         </div>
 
+        <!-- Work Calendar -->
+        <div class="modal fade" id="work-calendar" tabindex="-1" aria-labelledby="calendar-label" aria-hidden="true">
+          <div class="modal-dialog p-0">
+            <div class="modal-content">
+              <div class="modal-header px-0 pt-0 border-0">
+                <h4>Work Calendar</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="table-header">
+                December 2022
+              </div>
+              <table id="work-calendar">
+                <thead>
+                  <tr></tr>
+                </thead>
+                <tbody class="calendar-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
         <!-- Delete Modal -->
         <div class="modal fade" id="deleteModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -183,6 +205,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="../js/constants/users.js" type="module"></script>
+  <script src="../js/controllers/workCalendar.js" type="module"></script>
   <script src="../js/controllers/pagination-personnel.js" type="module"></script>
   <script src="../js/controllers/personnelsModule.js" type="module"></script>
   <!-- JavaScript Bundle with Popper -->

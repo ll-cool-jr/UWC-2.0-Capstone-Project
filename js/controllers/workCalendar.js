@@ -1,14 +1,8 @@
 import { datesInMonths, days } from "../constants/calendar.js";
-import { formatNumber } from "./helpers.js";
 
 const workCalendarHeader = document.querySelector("#work-calendar thead tr");
 const workCalendarBody = document.querySelector("#work-calendar tbody");
-const bgColors = ["#9095a0", "#008192", "#8353e2", "#00bdd6", "#9a580c", "#f5555a", "#1dd75b", "#1091f4", "#db3d3d"];
 
-const getRandomColor = () => {
-  const randomIdx = Math.floor(Math.random() * bgColors.length);
-  return bgColors[randomIdx];
-};
 
 const renderWorkCalendar = () => {
   const initialTableData = Array(35).fill(0);
@@ -83,24 +77,7 @@ const renderWorkCalendar = () => {
 
 renderWorkCalendar();
 
-const mockTasks = [{ label: "test", createAt: "12/10/2022 13:00" }, { label: "asdfa", createAt: "12/31/2022 4:50" }];
-const allTableContentData = document.querySelectorAll('.row-content');
 
-allTableContentData.forEach((item) => {
-  item.innerHTML = '';
-});
 
-mockTasks.forEach((item) => {
-  const dueDate = new Date(item.createAt);
-  const date = dueDate.getDate();
-  const hours = dueDate.getHours();
-  const minutes = dueDate.getMinutes();
-  const task = document.createElement('div');
-  task.classList.add("row-content__task");
-  task.style.backgroundColor = getRandomColor();
-  task.innerHTML = `${item.label} - ${formatNumber(hours)}:${formatNumber(minutes)}`;
-
-  allTableContentData[date - 1].appendChild(task);
-})
 
 
