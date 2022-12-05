@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personnel Management</title>
+  <title>Quản lý Nhân sự</title>
 
   <link rel="shortcut icon" href="../images/HCMUT_Logo.ico" type="image/x-icon" />
   <!-- CSS only -->
@@ -36,7 +36,7 @@
             <li>
               <a href="dashboard.html">
                 <i class="fa-solid fa-boxes-stacked"></i>
-                <span>Dashboard</span>
+                <span>Trang chủ</span>
               </a>
             </li>
             <li>
@@ -48,19 +48,19 @@
             <li>
               <a href="vehicles_management.html">
                 <i class="fa-solid fa-truck"></i>
-                <span>Vehicles</span>
+                <span>Phương tiện</span>
               </a>
             </li>
             <li class="active">
               <a href="personnel_management.html">
                 <i class="fa-solid fa-user"></i>
-                <span>Personnel</span>
+                <span>Nhân sự</span>
               </a>
             </li>
             <li>
               <a href="../index.html">
                 <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Log out</span>
+                <span>Đăng xuất</span>
               </a>
             </li>
           </ul>
@@ -69,12 +69,12 @@
 
       <div class="content col p-0 h-100">
         <header id="header">
-          <h1>Personnel Management</h1>
+          <h1>Quản lý Nhân sự</h1>
         </header>
         <main class="container p-4">
           <div class="overview">
             <div class="sub-header">
-              <h2><i class="fa-solid fa-th-large"> </i> Overview </h2>
+              <h2><i class="fa-solid fa-th-large"> </i> Tổng quát </h2>
             </div>
             <div class="row overview-card">
               <div class="card text-black col m-2" style="background-color: rgba(235,253,255,1); border-color: rgba(0,189,214,1);">
@@ -94,10 +94,10 @@
 
           <div class="content-table mt-3">
             <div class="sub-header">
-              <h2><i class="fa-solid fa-file-text"> </i> Personnel </h2>
+              <h2><i class="fa-solid fa-file-text"> </i> Nhân sự </h2>
 
               <button type="button" class="btn btn_style" data-bs-toggle="modal" data-bs-target="#addModal">
-                + Adding Personnel
+                + Thêm Nhân sự
               </button>
             </div>
 
@@ -105,12 +105,12 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col"><i class="fa-solid fa-check"></i>Personnel ID</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Name</th>
+                    <th scope="col"><i class="fa-solid fa-check"></i>ID nhân viên</th>
+                    <th scope="col">Vai trò</th>
+                    <th scope="col">Tên</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Điều chỉnh</th>
                   </tr>
                 </thead>
                 <tbody class="" id="table-personnel">
@@ -125,21 +125,21 @@
 
         </main>
 
-        <!-- Adding Modal -->
+        <!-- Thêm Modal -->
         <div class="modal fade" id="addModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Adding a personnel</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Thêm nhân viên</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 ...
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn_style">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn_style">Lưu thay đổi</button>
               </div>
             </div>
           </div>
@@ -151,15 +151,15 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit a personnel</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa nhân viên</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 ...
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn_style">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn_style">Lưu thay đổi</button>
               </div>
             </div>
           </div>
@@ -170,11 +170,11 @@
           <div class="modal-dialog p-0">
             <div class="modal-content">
               <div class="modal-header px-0 pt-0 border-0">
-                <h4>Work Calendar</h4>
+                <h4>Lịch làm việc</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="table-header">
-                December 2022
+                Tháng 12 2022
               </div>
               <table id="work-calendar">
                 <thead>
@@ -192,15 +192,15 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete a personnel</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Xóa nhân viên</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 ...
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn_style">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn_style">Xóa</button>
               </div>
             </div>
           </div>

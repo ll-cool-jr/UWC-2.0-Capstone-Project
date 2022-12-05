@@ -1,5 +1,6 @@
-import users from "../constants/users.js";
+import translation from "./translation.js";
 
+const lang = document.getElementById('lang');
 const formLogin = document.getElementById('form-login');
 const emailLogin = document.getElementById('email-login');
 const passwordLogin = document.getElementById('password-login');
@@ -22,4 +23,8 @@ formLogin?.addEventListener('submit', async (e) => {
 		window.location.href = 'views/dashboard.html';
 	}
 });
+
+lang.addEventListener('click', (e) => {
+	translation(e.target.checked);
+})
 

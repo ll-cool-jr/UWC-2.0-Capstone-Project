@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MCP Management</title>
+  <title>Quản lý MCP</title>
 
   <link rel="shortcut icon" href="../images/HCMUT_Logo.ico" type="image/x-icon" />
   <!-- CSS only -->
@@ -35,7 +35,7 @@
             <li>
               <a href="dashboard.html">
                 <i class="fa-solid fa-boxes-stacked"></i>
-                <span>Dashboard</span>
+                <span>Trang chủ</span>
               </a>
             </li>
             <li class="active">
@@ -47,19 +47,19 @@
             <li>
               <a href="vehicles_management.html">
                 <i class="fa-solid fa-truck"></i>
-                <span>Vehicles</span>
+                <span>Phương tiện</span>
               </a>
             </li>
             <li>
               <a href="personnel_management.html">
                 <i class="fa-solid fa-user"></i>
-                <span>Personnel</span>
+                <span>Nhân sự</span>
               </a>
             </li>
             <li>
               <a href="../index.html">
                 <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Log out</span>
+                <span>Đăng xuất</span>
               </a>
             </li>
           </ul>
@@ -68,26 +68,26 @@
 
       <div class="content col p-0 h-100">
         <header id="header">
-          <h1>MCPs Management</h1>
+          <h1>Quản lý MCPs</h1>
         </header>
         <main class="container p-4">
           <div class="overview">
             <div class="sub-header">
-              <h2><i class="fa-solid fa-th-large"> </i> Overview </h2>
+              <h2><i class="fa-solid fa-th-large"> </i> Tổng quát </h2>
             </div>
             <div class="row overview-card">
               <div class="card text-black col m-2" style="background-color: rgba(235,253,255,1); border-color: rgba(0,189,214,1);">
                 <div class="card-body">
-                  <h5 class="card-title">Unfilled MCP</h5>
+                  <h5 class="card-title">MCP chưa đầy</h5>
                   <h3 id="MCPsUnfilledCount"></h3>
-                  <p class="card-text">MCP under 95% storage</p>
+                  <p class="card-text">MCP lưu trữ dưới 95%</p>
                 </div>
               </div>
               <div class="card text-black col m-2" style="background: rgba(254,240,241,1); border-color: rgba(224,88,88,1);">
                 <div class="card-body">
-                  <h5 class="card-title">Overloaded MCP</h5>
+                  <h5 class="card-title">MCP đã đầy</h5>
                   <h3 id="MCPsOverloadedCount"></h3>
-                  <p class="card-text">MCP over 95% storage</p>
+                  <p class="card-text">MCP lưu trữ trên 95%</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@
             <div class="sub-header">
               <h2><i class="fa-solid fa-file-text"> </i> MCPs </h2>
               <button type="button" class="btn btn_style" data-bs-toggle="modal" data-bs-target="#addModal">
-                + Adding MCP
+                + Thêm MCP
               </button>
             </div>
 
@@ -106,11 +106,11 @@
                 <thead>
                   <tr>
                     <th scope="col"><i class="fa-solid fa-check"></i>MCP ID</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Adress</th>
-                    <th scope="col">Current Capacity</th>
-                    <th scope="col">Max Capacity</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Địa chỉ</th>
+                    <th scope="col">Sức chứa hiện tại</th>
+                    <th scope="col">Sức chứa tối đa</th>
+                    <th scope="col">Điều chỉnh</th>
                   </tr>
                 </thead>
                 <tbody class="" id="table-mcp">
@@ -124,20 +124,20 @@
 
       </main>
 
-      <!-- Adding Modal -->
+      <!-- Thêm Modal -->
       <div class="modal fade" id="addModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Adding an MCP</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Thêm MCP</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               ...
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn_style">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn_style">Lưu thay đổi</button>
             </div>
           </div>
         </div>
@@ -148,15 +148,15 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Edit an MCP</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa MCP</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               ...
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn_style">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn_style">Lưu thay đổi</button>
             </div>
           </div>
         </div>
@@ -168,15 +168,15 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Delete an MCP</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Xóa MCP</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               ...
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn_style">Delete</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn_style">Xóa</button>
             </div>
           </div>
         </div>

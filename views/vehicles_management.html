@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vehicles Management</title>
+  <title>Quản lý Phương tiện</title>
 
   <link rel="shortcut icon" href="../images/HCMUT_Logo.ico" type="image/x-icon" />
   <!-- CSS only -->
@@ -35,7 +35,7 @@
             <li>
               <a href="dashboard.html">
                 <i class="fa-solid fa-boxes-stacked"></i>
-                <span>Dashboard</span>
+                <span>Trang chủ</span>
               </a>
             </li>
             <li>
@@ -47,19 +47,19 @@
             <li class="active">
               <a href="vehicles_management.html">
                 <i class="fa-solid fa-truck"></i>
-                <span>Vehicles</span>
+                <span>Phương tiện</span>
               </a>
             </li>
             <li>
               <a href="personnel_management.html">
                 <i class="fa-solid fa-user"></i>
-                <span>Personnel</span>
+                <span>Nhân sự</span>
               </a>
             </li>
             <li>
               <a href="../index.html">
                 <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Log out</span>
+                <span>Đăng xuất</span>
               </a>
             </li>
           </ul>
@@ -68,35 +68,35 @@
 
       <div class="content col p-0 h-100">
         <header id="header">
-          <h1>Vehicles Management</h1>
+          <h1>Quản lý Phương tiện</h1>
         </header>
         <main class="container p-4">
           <div class="overview">
             <div class="sub-header">
-              <h2><i class="fa-solid fa-th-large"> </i> Overview </h2>
+              <h2><i class="fa-solid fa-th-large"> </i> Tổng quát </h2>
             </div>
             <div class="row overview-card">
               <div class="card text-black col m-2" style="background-color: rgba(235,253,255,1); border-color: rgba(0,189,214,1);">
                 <div class="card-body">
-                  <h5 class="card-title">Available Trucks</h5>
+                  <h5 class="card-title">Xe tải khả dụng</h5>
                   <h3 id="TruckAvailableCount"></h3>
                 </div>
               </div>
               <div class="card text-black col m-2" style="background: rgba(254,246,241,1); border-color: rgba(237,125,45,1);">
                 <div class="card-body">
-                  <h5 class="card-title">Truck in Progress</h5>
+                  <h5 class="card-title">Xe tải đang được sử dụng</h5>
                   <h3 id="TruckProgressingCount"></h3>
                 </div>
               </div>
               <div class="card text-black col m-2" style="background-color: rgba(235,253,255,1); border-color: rgba(0,189,214,1);">
                 <div class="card-body">
-                  <h5 class="card-title">Available Troller</h5>
+                  <h5 class="card-title">Xe đẩy khả dụng</h5>
                   <h3 id="TrollerAvailableCount"></h3>
                 </div>
               </div>
               <div class="card text-black col m-2" style="background: rgba(254,246,241,1); border-color: rgba(237,125,45,1);">
                 <div class="card-body">
-                  <h5 class="card-title">Troller in Progress</h5>
+                  <h5 class="card-title">Xe đẩy đang được sử dụng</h5>
                   <h3 id="TrollerProgressingCount"></h3>
                 </div>
               </div>
@@ -105,10 +105,10 @@
 
           <div class="content-table mt-3">
             <div class="sub-header">
-              <h2><i class="fa-solid fa-file-text"> </i> Vehicles </h2>
+              <h2><i class="fa-solid fa-file-text"> </i> Phương tiện </h2>
 
               <button type="button" class="btn btn_style" data-bs-toggle="modal" data-bs-target="#addModal">
-                + Adding Vehicle
+                + Thêm Phương tiện
               </button>
             </div>
 
@@ -116,13 +116,13 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col"><i class="fa-solid fa-check"></i>Vehicle ID</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Weight (kg)</th>
-                    <th scope="col">Capacity</th>
-                    <th scope="col">Fuel consumption (l/100km)</th>
-                    <th scope="col">Manipulator</th>
-                    <th scope="col">Action</th>
+                    <th scope="col"><i class="fa-solid fa-check"></i>ID Phương tiện</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Khối lượng (kg)</th>
+                    <th scope="col">Sức chứa</th>
+                    <th scope="col">Lượng xăng dầu tiêu thụ (l/100km)</th>
+                    <th scope="col">Nhân viên</th>
+                    <th scope="col">Điều chỉnh</th>
                   </tr>
                 </thead>
                 <tbody class="" id="table-vehicle">
@@ -137,20 +137,20 @@
 
       </main>
 
-      <!-- Adding Modal -->
+      <!-- Thêm Modal -->
       <div class="modal fade" id="addModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Adding a vehicle</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Thêm phương tiện</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               ...
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn_style">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn_style">Lưu thay đổi</button>
             </div>
           </div>
         </div>
@@ -161,15 +161,15 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Edit a vehicle</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa phương tiện</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               ...
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn_style">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn_style">Lưu thay đổi</button>
             </div>
           </div>
         </div>
@@ -181,15 +181,15 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Delete a vehicle</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Xóa phương tiện</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               ...
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn_style">Delete</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn_style">Xóa</button>
             </div>
           </div>
         </div>
