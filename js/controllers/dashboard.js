@@ -1,3 +1,5 @@
+import { days } from "../constants/calendar.js";
+
 const baseUrl = "https://localhost:7231/api";
 const quantityContent = document.querySelectorAll(".c-content .quantity");
 const taskProgress = document.querySelector(".task-progress .front");
@@ -122,10 +124,10 @@ const displayData = () => {
   const wasteProportionXValues = Object.keys(wasteProportionData);
   const wasteProportionYValues = Object.values(wasteProportionData);
 
-  const wasteLast5DaysData = getObjectOfData(data.wasteData, "day", "tons");
+  const wasteLastWeekData = getObjectOfData(data.wasteData, "day", "tons");
 
-  const wasteCollectedXValues = Object.keys(wasteLast5DaysData);
-  const wasteCollectedYValues = Object.values(wasteLast5DaysData);
+  const wasteCollectedXValues = Object.keys(wasteLastWeekData);
+  const wasteCollectedYValues = Object.values(wasteLastWeekData);
 
   displayChartData(
     pieChart,
@@ -142,7 +144,7 @@ const displayData = () => {
     "Waste Collected And Handled In The Previous Week In Tons",
     0,
     false,
-    wasteCollectedXValues,
+    days,
     wasteCollectedYValues
   );
 };
