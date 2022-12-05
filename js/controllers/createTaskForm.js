@@ -29,7 +29,7 @@ form.addEventListener("submit", async (e) => {
 		userId: formAssignee.value,
 		vehicleId: formVehicle.value,
 		mcpId: formMcp.value,
-		createdAt: moment(new Date()).format("MM/DD/YYYY")
+		createdAt: moment(new Date()).format("MM/DD/YYYY hh/mm")
 	};
 
 	const res = await axios.post(`${baseUrl}/tasks`, taskData);

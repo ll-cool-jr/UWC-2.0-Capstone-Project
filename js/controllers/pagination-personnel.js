@@ -1,4 +1,5 @@
 const users = JSON.parse(sessionStorage.getItem('DATA')).users;
+const tasks = JSON.parse(sessionStorage.getItem('DATA')).tasks;
 import { formatNumber } from "./helpers.js";
 
 const bgColors = ["#9095a0", "#008192", "#8353e2", "#00bdd6", "#9a580c", "#f5555a", "#1dd75b", "#1091f4", "#db3d3d"];
@@ -96,7 +97,7 @@ function buildTable() {
 		const tr = document.createElement('tr');
 		tr.setAttribute("data-bs-toggle", "modal");
 		tr.setAttribute("data-bs-target", "#work-calendar");
-		tr.setAttribute("data-user", myList[i].fullname);
+		tr.setAttribute("data-user", myList[i].id);
 		tr.classList.add('personnel-row');
 		tr.innerHTML = ``;
 
@@ -114,8 +115,8 @@ function buildTable() {
 		tr.innerHTML = row;
 
 		tr.addEventListener('click', (e) => {
-			const user = tr.getAttribute("data-user");
-			const toDoTasks = users.find(elem => elem.fullname === user).toDoTasks;
+			const id = tr.getAttribute("data-user");
+			const toDoTasks = tasks.filter(task => task.userId == id);
 			const allTableContentData = document.querySelectorAll('.row-content');
 
 			allTableContentData.forEach((item) => {

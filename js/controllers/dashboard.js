@@ -154,5 +154,4 @@ if (!sessionStorage.getItem("DATA")) {
 } else {
   data = JSON.parse(sessionStorage.getItem("DATA"));
 }
-
 displayData();
