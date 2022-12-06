@@ -89,9 +89,9 @@ function buildTable() {
 		var row1 = `<tr> <td class="pt-4">${myList[i].id}</td>`;
 
 		if (myList[i].status == "Unfilled")
-			var row2 = `<td class="pt-4 unfilled">${myList[i].status}</td>`;
+			var row2 = `<td class="pt-4 unfilled">Còn trống</td>`;
 		else
-			var row2 = `<td class="pt-4 overloaded">${myList[i].status}</td>`;
+			var row2 = `<td class="pt-4 overloaded">Đã đầy</td>`;
 
 		var row3 = `
           <td class="pt-4">${myList[i].address}</td>
