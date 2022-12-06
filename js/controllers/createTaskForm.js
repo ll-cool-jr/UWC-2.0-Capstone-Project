@@ -11,11 +11,10 @@ const formVehicle = document.getElementById("vehicle");
 const formMcp = document.getElementById("mcp");
 
 const openFormBtn = document.querySelector(".create-btn");
-const modalBackdrop = document.getElementById("modal-backdrop");
 const taskNo = document.getElementById("task-no");
 
 const getDefaultSelectOption = (opt) => {
-	return `<option value="" disabled selected>Choose ${opt}</option>`;
+	return `<option value="" disabled selected>Chọn ${opt}</option>`;
 };
 
 form.addEventListener("submit", async (e) => {
@@ -62,9 +61,9 @@ openFormBtn.addEventListener("click", (e) => {
 	});
 	const vehicleOptions = data.vehicle.map((vehicle) => vehicle.id);
 
-	formVehicle.innerHTML = getDefaultSelectOption("vehicle");
+	formVehicle.innerHTML = getDefaultSelectOption("phương tiện");
 	formMcp.innerHTML = getDefaultSelectOption("MCP");
-	formAssignee.innerHTML = getDefaultSelectOption("Assignee");
+	formAssignee.innerHTML = getDefaultSelectOption("nhân viên");
 
 	userOptions.forEach((opt) => {
 		const option = document.createElement("option");
