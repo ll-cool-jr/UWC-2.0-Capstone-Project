@@ -123,9 +123,9 @@ const calcRoute = (origin, destination) => {
       const output = document.querySelector("#output");
       output.innerHTML =
         "<div class ='alert-info'>" +
-        "Driving distance: " +
+        "Khoảng cách: " +
         result.routes[0].legs[0].distance.text +
-        ".<br />Time: " +
+        ".<br />Thời gian dự tính: " +
         result.routes[0].legs[0].duration.text +
         ".</div>";
 

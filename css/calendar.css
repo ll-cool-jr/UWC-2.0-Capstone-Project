@@ -5,6 +5,10 @@ table {
   box-sizing: border-box;
 }
 
+.modal-dialog {
+  max-width: fit-content;
+}
+
 .modal-content {
   width: 70vw;
   padding: 20px 30px;
