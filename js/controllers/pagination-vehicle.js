@@ -93,11 +93,11 @@ function buildTable() {
 
 
 		if (myList[i].status == "Available")
-			var row2 = `<td class="pt-4 unfilled">${myList[i].status}</td>`;
+			var row2 = `<td class="pt-4 unfilled">Khả dụng</td>`;
 		else if (myList[i].status == "Unavailable")
-			var row2 = `<td class="pt-4 overloaded">${myList[i].status}</td>`;
+			var row2 = `<td class="pt-4 overloaded">Bảo dưỡng</td>`;
 		else
-			var row2 = `<td class="pt-4 prog">${myList[i].status}</td>`;
+			var row2 = `<td class="pt-4 prog">Đang sử dụng</td>`;
 
 		var row3 = `
           <td class="pt-4">${myList[i].weight}</td>
