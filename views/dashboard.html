@@ -17,6 +17,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/taskForm.css">
   <link rel="stylesheet" href="../css/loading.css" />
   <script src="https://kit.fontawesome.com/1c066e88f1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
@@ -55,13 +56,6 @@
                 <span>Phương tiện</span>
               </a>
             </li>
-            <li>
-              <a href="map.html">
-                <i class="fa-solid fa-map-location-dot"></i>
-                <span>Tìm đường</span>
-              </a>
-            </li>
-            <li>
             <li>
               <a href="personnel_management.html">
                 <i class="fa-solid fa-user"></i>
@@ -235,6 +229,15 @@
               </div>
             </div>
 
+            <div class="mapdisplay">
+              <div id="googleMap">
+                <!--Map will be displayed here-->
+              </div>
+              <div id="output">
+                <!--Distance and time will be displayed here-->
+              </div>
+            </div>
+
             <div class="form-btn">
               <button type="submit">Xác nhận</button>
             </div>
@@ -244,6 +247,10 @@
     </div>
   </div>
 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1vnms4dLe_rwet4t_mR0DL3CyzWW8I9k&region=VN&libraries=places"></script>
+  <script src="../js/controllers/map.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="../js/controllers/sidenav.js" type="module"></script>
   <script src="../js/controllers/createTaskForm.js" type="module"></script>
   <script src="../js/controllers/dashboard.js" type="module"></script>

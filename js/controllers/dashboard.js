@@ -1,4 +1,4 @@
-import { days } from "../constants/calendar.js";
+import { daysInVn } from "../constants/calendar.js";
 
 const baseUrl = "https://localhost:7231/api";
 const quantityContent = document.querySelectorAll(".c-content .quantity");
@@ -60,6 +60,7 @@ const displayChartData = (
           },
           font: {
             size: 20,
+            family: "Inter"
           },
           color: "#075794",
         },
@@ -102,7 +103,7 @@ const displayData = () => {
   const sortedWasteData = data.mcps
     .map((mcp) => {
       return {
-        address: mcp.address,
+        location: mcp.location,
         currcapacity: mcp.currcapacity,
       };
     })
@@ -116,7 +117,7 @@ const displayData = () => {
   );
   const wasteProportionData = getObjectOfData(
     firstFourData,
-    "address",
+    "location",
     "currcapacity"
   );
   wasteProportionData.Other = otherWasteValue;
@@ -126,13 +127,13 @@ const displayData = () => {
 
   const wasteLastWeekData = getObjectOfData(data.wasteData, "day", "tons");
 
-  const wasteCollectedXValues = Object.keys(wasteLastWeekData);
+  // const wasteCollectedXValues = Object.keys(wasteLastWeekData);
   const wasteCollectedYValues = Object.values(wasteLastWeekData);
 
   displayChartData(
     pieChart,
     "pie",
-    "Waste Proportion In Different Areas",
+    "Tỉ lệ rác thải ở các khu vực khác nhau",
     4,
     true,
     wasteProportionXValues,
@@ -141,10 +142,10 @@ const displayData = () => {
   displayChartData(
     barChart,
     "bar",
-    "Waste Collected And Handled In The Previous Week In Tons",
+    "Lượng rác thải được xử lý trong tuần qua (đơn vị: tấn)",
     0,
     false,
-    days,
+    daysInVn,
     wasteCollectedYValues
   );
 };

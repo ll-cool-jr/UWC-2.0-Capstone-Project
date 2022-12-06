@@ -2,7 +2,6 @@ import { formatNumber } from "./helpers.js";
 
 const baseUrl = "https://localhost:7231/api";
 const form = document.getElementById("form");
-const formWrapper = document.getElementById("form-wrapper");
 const formLabel = document.getElementById("label");
 const formDescription = document.getElementById("description");
 const formAssignee = document.getElementById("assignee");
@@ -56,7 +55,7 @@ openFormBtn.addEventListener("click", (e) => {
 	const mcpOptions = data.mcps.map((mcp) => {
 		return {
 			id: mcp.id,
-			address: mcp.address,
+			location: mcp.location,
 		};
 	});
 	const vehicleOptions = data.vehicle.map((vehicle) => vehicle.id);
@@ -73,13 +72,6 @@ openFormBtn.addEventListener("click", (e) => {
 		formAssignee.appendChild(option);
 	});
 
-	mcpOptions.map((opt) => {
-		const option = document.createElement("option");
-		option.value = opt.id;
-		option.text = opt.address;
-
-		formMcp.appendChild(option);
-	});
 
 	vehicleOptions.map((opt) => {
 		const option = document.createElement("option");
@@ -88,4 +80,76 @@ openFormBtn.addEventListener("click", (e) => {
 
 		formVehicle.appendChild(option);
 	});
+
+	mcpOptions.map((opt) => {
+		const option = document.createElement("option");
+		option.value = opt.id;
+		option.text = opt.location;
+
+		formMcp.appendChild(option);
+	});
+});
+
+// Map options
+let defaultCoords = {
+	lat: 10.7721603889492,
+	lng: 106.70428276829283,
+};
+const mapOptions = {
+	center: mylatlng,
+	zoom: 13,
+	mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+
+const map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+const route = new google.maps.DirectionsService();
+const routeRender = new google.maps.DirectionsRenderer();
+const geocoder = new google.maps.Geocoder();
+routeRender.setMap(map);
+
+const calcRoute = (origin, destination) => {
+	console.log(origin, destination);
+
+	let request = {
+		origin,
+		destination,
+		travelMode: google.maps.TravelMode.DRIVING,
+		unitSystem: google.maps.UnitSystem.METRIC
+	};
+
+	route.route(request, function (result, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+
+			const output = document.querySelector('#output');
+			output.innerHTML = "<div class ='alert-info'>" + "Driving distance: " + result.routes[0].legs[0].distance.text + ".<br />Time: " + result.routes[0].legs[0].duration.text + ".</div>";
+
+
+			routeRender.setDirections(result);
+		}
+	});
+};
+
+formMcp.addEventListener('change', (e) => {
+	const mcps = JSON.parse(sessionStorage.getItem("DATA")).mcps;
+	const targetMcp = mcps[e.target.value - 1];
+
+	const success = (pos) => {
+		const crd = pos.coords;
+		const { latitude: lat, longitude: lng } = crd;
+		defaultCoords = { lat, lng };
+
+		geocoder.geocode({ 'address': targetMcp.address }, function (results, status) {
+
+			if (status === google.maps.GeocoderStatus.OK) {
+				const latitude = results[0].geometry.location.lat();
+				const longitude = results[0].geometry.location.lng();
+
+				calcRoute(defaultCoords, { lat: latitude, lng: longitude });
+			}
+		});
+	};
+
+	const error = () => console.error(defaultCoords);
+
+	navigator.geolocation.getCurrentPosition(success, error);
 });
