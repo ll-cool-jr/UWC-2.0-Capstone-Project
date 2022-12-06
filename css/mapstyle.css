@@ -1,0 +1,9 @@
+.mapdisplay {
+    padding: 20px;
+}
+
+#googleMap {
+    width: 70%;
+    height: 400px;
+    margin: 0 auto;
+}
