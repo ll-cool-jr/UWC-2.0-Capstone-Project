@@ -125,7 +125,6 @@ function buildTable() {
 
 			if (toDoTasks.length > 0) {
 				toDoTasks.forEach((item) => {
-
 					const dueDate = new Date(item.createdAt);
 					const date = dueDate.getDate();
 					const hours = dueDate.getHours();
@@ -134,6 +133,7 @@ function buildTable() {
 					task.classList.add("row-content__task");
 					task.style.backgroundColor = getRandomColor();
 					task.innerHTML = `${item.label} - ${formatNumber(hours)}:${formatNumber(minutes)}`;
+					console.log(date);
 
 					allTableContentData[date - 1].appendChild(task);
 				});
