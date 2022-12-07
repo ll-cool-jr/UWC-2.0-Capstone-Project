@@ -120,7 +120,7 @@ const displayData = () => {
     "location",
     "currcapacity"
   );
-  wasteProportionData.Other = otherWasteValue;
+  wasteProportionData["Khác"] = otherWasteValue;
 
   const wasteProportionXValues = Object.keys(wasteProportionData);
   const wasteProportionYValues = Object.values(wasteProportionData);
